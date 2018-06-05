@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="">
+	<head>
+		<style>
+			html {
+				width:100%;height:100%;
+				margin:0;
+				padding:0;
+				overflow:hidden;
+			}
+			body {
+				position:absolute;
+				top:-24px;
+				left:-46px;
+				bottom:0;
+				right:0;
+				margin:0;
+				padding:0;
+			}
+			iframe {
+				border:none;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe id="frame" src="" style="border:none;" width="100%" height="100%"></iframe>
+		<script type="text/javascript">
+			var queryDict = {}
+			location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+
+			queryDict["gid"]
+			var iframe = document.getElementById("frame")
+			if(queryDict["gid"]){
+				iframe.src = "https://docs.google.com/spreadsheets/d/"+queryDict["id"]+"/view?gid="+queryDict["gid"]+"&rm=minimal"
+			}else{
+				iframe.src = "https://docs.google.com/spreadsheets/d/"+queryDict["id"]+"/view?rm=minimal"
+			}
+		</script>
+	</body>
+</html>
